@@ -1,0 +1,50 @@
+*,*::before, *::after {box-sizing: border-box;}
+html,body{
+    margin: 0;
+    height: 100%;
+}
+
+body{
+    background-color: #1e1f23;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Animation */
+  .box {
+    width: 600px;
+    height: 320px;
+    display: flex;
+    background: transparent;
+    transform: rotate(-25deg) skew(25deg);
+    transition: 0.5s;
+  }
+  
+  .box:hover {
+    cursor: pointer;
+    transform: rotate(-25deg) skew(-25deg) translateY(-10px);    cursor: pointer;
+    filter: drop-shadow(1px 4px 10px rgba(255, 255, 255, 0.4));
+  }
+  
+  .box span {
+    width: 25%;
+    height: 100%;
+    display: block;
+    background: url(/assets/img/teen.jpg);
+    background-size: cover;
+    background-position: calc(-160px * var(--i));
+    border-top: 1px solid rgb(126, 126, 126);
+    border-bottom: .1px solid rgb(131, 131, 131);
+    transition: 0.5s;
+    pointer-events: none;
+  }
+  
+  .box:hover span:nth-child(odd) {
+    transform: skewY(25deg);
+    box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.5);
+  }
+  
+  .box:hover span:nth-child(even) {
+    transform: skewY(-25deg);
+    box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.5);
+  }
